@@ -26,6 +26,8 @@ start(Path) ->
     error_logger:info_msg("~p ~B bytes, ~B bytes/chunk~n",
                           [self(), FileSize, ChunkSize]),
 
+    erlang:statistics(wall_clock),
+
     %% Open file
     Options = [raw, binary, {read_ahead, ?BUFFER_SIZE}],
     {ok, File} = file:open(Path, Options),
@@ -53,6 +55,9 @@ start(Path) ->
     %% Wait for results
     Results = wait(?NUM_PROCS),
     error_logger:info_msg("~p ~p~n", [self(), lists:sum(Results)]),
+
+    {_, Delta} = erlang:statistics(wall_clock),
+    error_logger:info_msg("~p ~p~n", [self(), Delta / 1000]),
 
     %% Terminate node
     init:stop().
