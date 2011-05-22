@@ -43,7 +43,8 @@ And these are the results of running our programs on different hardware with
 the same test data.
  
 ======= ============ ========== ============== ==============
-Machine  CPython 3.2   pypy 1.5  Erlang R14B02  Erlang R14B02
+Machine CPython 3.2  pypy 1.5   Erlang R14B02  Erlang R14B02
+        serial.py    serial.py  serial.erl     parallel.erl
 MBP           10.546      3.091         11.435          1.918
 iMac          13.654      6.312         20.634          5.181
 ======= ============ ========== ============== ==============
