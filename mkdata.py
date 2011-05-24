@@ -1,8 +1,11 @@
+"""Efficiently generating huge amounts of test data."""
+
 import StringIO
 import random
 import sys
 
 CHARS = " .0123456789ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz"
+
 
 if __name__ == "__main__":
 
@@ -17,8 +20,8 @@ if __name__ == "__main__":
     except IndexError:
         n = 1
 
-    s = 10000
-    
+    s = 40500 # pypy crashes 
+ 
     if n / s > 0:
         chunks = [s] * (n / s) + [n % s]
     else:
@@ -32,3 +35,5 @@ if __name__ == "__main__":
             print >>buf, "".join(r.sample(chars, length))
 
         sys.stdout.write(buf.getvalue())
+
+        buf.close()
