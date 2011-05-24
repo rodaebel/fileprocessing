@@ -4,7 +4,7 @@ import StringIO
 import random
 import sys
 
-CHARS = " .0123456789ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz"
+CHARS = "".join(chr(i) for i in range(32, 127))
 
 
 if __name__ == "__main__":
@@ -13,7 +13,12 @@ if __name__ == "__main__":
     r = random.Random()
 
     length = 3 * 80
-    chars = CHARS * (length / len(CHARS)) + CHARS[:length % len(CHARS)]
+    len_chars = len(CHARS)
+
+    if len_chars < length:
+        chars = CHARS * (length / len_chars) + CHARS[:length % len_chars]
+    else:
+        chars = CHARS
 
     try:
         n = int(sys.argv[1])
