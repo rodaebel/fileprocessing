@@ -7,7 +7,7 @@
 
 -include_lib("kernel/include/file.hrl").
 
--define(BUFFER_SIZE, 1000000).
+-define(BUFFER_SIZE, 100000).
 
 -define(NUM_PROCS, 8).
 
@@ -112,6 +112,7 @@ process_path(Path, Offset, Limit) ->
     {ok, File} = file:open(Path, Options),
     {ok, _} = file:position(File, Offset),
     N = scan_file(File, Limit - Offset - 1, 0),
+    file:close(File),
     {ok, N}.
 
 %% @doc Scans file for newlines.
