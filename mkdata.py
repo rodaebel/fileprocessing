@@ -20,7 +20,7 @@ if __name__ == "__main__":
     except IndexError:
         n = 1
 
-    s = 40500 # pypy crashes 
+    s = 10000
  
     if n / s > 0:
         chunks = [s] * (n / s) + [n % s]
