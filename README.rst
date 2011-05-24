@@ -47,10 +47,12 @@ Machine CPython 3.2  pypy 1.5   Erlang R14B02  Erlang R14B02
         serial.py    serial.py  serial.erl     parallel.erl
 MBP           10.546      3.091         11.435          1.124
 iMac          13.654      6.312         20.634          3.271
+Xen           18.716     14.268         18.284          7.580
 ======= ============ ========== ============== ==============
 
  - MBP  = MacBook Pro 2.3 GHz Intel Core i7 / SSD
- - iMac = iMac 3.06 GHz Intel Core 2 Duo / HD
+ - iMac = iMac 3.06 GHz Intel Core 2 Duo / HD (7.200 RPM)
+ - Xen  = Debian Lunux 2.6.26-2-xen-amd64 8 CPUs @ 2673 MHz
 
 
 Footnotes
