@@ -39,8 +39,8 @@ following command::
 
   $ python mkdata.py 5000000 > test.txt
 
-And these are the results of running our programs on different hardware with
-the same test data. The disk cache was flushed before each run.
+And these are the results (in seconds) of running our programs on different
+hardware with the same test data. The disk cache was flushed before each run.
  
 ======= ============ ========== ============== ==============
 Machine CPython 3.2  pypy 1.5   Erlang R14B02  Erlang R14B02
@@ -52,7 +52,7 @@ Xen           18.716     14.268         18.284          7.580
 
  - MBP  = MacBook Pro 2.3 GHz Intel Core i7 / SSD
  - iMac = iMac 3.06 GHz Intel Core 2 Duo / HD (7.200 RPM)
- - Xen  = Debian Lunux 2.6.26-2-xen-amd64 8 CPUs @ 2673 MHz
+ - Xen  = Debian Linux 2.6.26-2-xen-amd64 8 CPUs @ 2673 MHz
 
 
 Footnotes
