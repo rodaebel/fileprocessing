@@ -43,12 +43,12 @@ And these are the results (in seconds) of running our programs on different
 hardware with the same test data. For the first series the disk cache was
 flushed before each run by rebooting the machine.
  
-============ ========== ============== ==============
-Machine      pypy 1.5   Erlang R14B03  Erlang R14B03
-             serial.py  serial.erl     parallel.erl
-MBP               6.254         11.342          7.821
-MBP (cached)      3.127         10.684          1.124
-============ ========== ============== ==============
+============ ============== ============== ==========
+Machine      Erlang R14B03  Erlang R14B03  pypy 1.5
+             serial.erl     parallel.erl   serial.py
+MBP                  11.342          7.821      6.254
+MBP (cached)         10.684          1.124      3.127
+============ ============== ============== ==========
 
  - MBP  = MacBook Pro 2.3 GHz Intel Core i7 / SSD
 
