@@ -40,22 +40,31 @@ following command::
   $ python mkdata.py 5000000 > test.txt
 
 And these are the results (in seconds) of running our programs on different
-hardware with the same test data. The disk cache was flushed before each run.
+hardware with the same test data. For the first series the disk cache was
+flushed before each run by rebooting the machine.
  
-======= ============ ========== ============== ==============
-Machine CPython 3.2  pypy 1.5   Erlang R14B02  Erlang R14B02
-        serial.py    serial.py  serial.erl     parallel.erl
-MBP           10.546      3.091         11.435          1.124
-iMac          13.654      6.312         20.634          3.271
-Xen           18.716     14.268         18.284          7.580
-======= ============ ========== ============== ==============
+============ ========== ============== ==============
+Machine      pypy 1.5   Erlang R14B03  Erlang R14B03
+             serial.py  serial.erl     parallel.erl
+MBP               6.254         11.342          7.821
+MBP (cached)      3.127         10.684          1.124
+============ ========== ============== ==============
 
  - MBP  = MacBook Pro 2.3 GHz Intel Core i7 / SSD
- - iMac = iMac 3.06 GHz Intel Core 2 Duo / HD (7.200 RPM)
- - Xen  = Debian Linux 2.6.26-2-xen-amd64 8 CPUs @ 2673 MHz
+
+
+Conclusion
+----------
+
+As of this writing, Erlang R1403 seems to be relatively inefficient when doing
+normal file I/O. Buffering and parallel data processing helps to gain slightly
+better results, though. But for anyone who wants to dive deeper into this
+matter, I recommend Jay Nelson's talk "Process-Striped Buffering with
+gen_stream" [#GenStream]_ he gave at the Erlang Factory 2011.
 
 
 Footnotes
 ---------
 
 .. [#WideFinder] See Time Bray's `Wide Finder Project <http://www.tbray.org/ongoing/When/200x/2007/09/20/Wide-Finder>`_.
+.. [#GenStream] Jay Nelson on `Process-Striped Buffering with gen_stream <http://erlang-factory.com/conference/SFBay2011/speakers/JayNelson>`_
