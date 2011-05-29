@@ -67,4 +67,4 @@ Footnotes
 ---------
 
 .. [#WideFinder] See Time Bray's `Wide Finder Project <http://www.tbray.org/ongoing/When/200x/2007/09/20/Wide-Finder>`_.
-.. [#GenStream] Jay Nelson on `Process-Striped Buffering with gen_stream <http://erlang-factory.com/conference/SFBay2011/speakers/JayNelson>`_
+.. [#GenStream] Jay Nelson on `Process-Striped Buffering with gen_stream <http://erlang-factory.com/conference/SFBay2011/speakers/JayNelson>`_.
